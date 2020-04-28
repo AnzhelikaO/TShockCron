@@ -28,7 +28,6 @@ namespace TShockCron
         private void loadData(string path)
         {
             string line;
-            bool comment = false;
             string[] lineOptions;
             string command;
             string options = "";
@@ -52,11 +51,8 @@ namespace TShockCron
             System.IO.StreamReader file = new System.IO.StreamReader(path);
             while ((line = file.ReadLine()) != null)
             {
-                comment = false;
-
                 if (line.StartsWith("#"))
                 {
-                    comment = true;
                     options = line;
                     command = "";
                 }

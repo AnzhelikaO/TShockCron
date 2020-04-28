@@ -16,10 +16,11 @@ using Terraria;
 using TShockAPI;
 using TerrariaApi.Server;
 
+using Color = Microsoft.Xna.Framework.Color;
 
 namespace TShockCron
 {
-    [ApiVersion(1, 21)]
+    [ApiVersion(2, 1)]
     public class Cron : TerrariaPlugin
     {
         public static bool verbose = false;
