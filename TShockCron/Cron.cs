@@ -53,7 +53,7 @@ namespace TShockCron
         public override void Initialize()
         {
             ServerApi.Hooks.GamePostInitialize.Register(this, OnGameInitialize);
- 
+
             Commands.ChatCommands.Add(new Command("TCron.allow", runTCron, "cron"));
          }
         protected override void Dispose(bool disposing)
@@ -70,6 +70,7 @@ namespace TShockCron
 
         private void OnGameInitialize(EventArgs args)
         {
+            cronTab.reloadCronTab();
             cronTab.atReboot(Path.Combine(TShock.SavePath, "crontab.txt"));
         }
 
@@ -102,11 +103,7 @@ namespace TShockCron
 
             if (arguments.Contains("-r") || arguments.Contains("-reload"))
             {
-                cronTab.stopTimeEvents();
-
-                var path = Path.Combine(TShock.SavePath, "crontab.txt");
-
-                cronTab.Read(path);
+                cronTab.reloadCronTab();
                 return;
             }
 
