@@ -1,4 +1,7 @@
-﻿namespace TShockCron
+﻿extern alias glwinforms;
+using winforms = glwinforms.System.Windows.Forms;
+
+namespace TShockCron
 {
     partial class ViewCronTab
     {
@@ -28,31 +31,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataCronTab = new System.Windows.Forms.DataGridView();
-            this.btnReload = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.tabRefresh = new System.Windows.Forms.Button();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.lblOptions = new System.Windows.Forms.Label();
-            this.lblSaveStatus = new System.Windows.Forms.Label();
-            this.listSchedule = new System.Windows.Forms.ListView();
-            this.colScheduledEvents = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cronOptions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cronCommand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataCronTab = new winforms.DataGridView();
+            this.btnReload = new winforms.Button();
+            this.btnSave = new winforms.Button();
+            this.tabRefresh = new winforms.Button();
+            this.btnTest = new winforms.Button();
+            this.lblOptions = new winforms.Label();
+            this.lblSaveStatus = new winforms.Label();
+            this.listSchedule = new winforms.ListView();
+            this.colScheduledEvents = ((winforms.ColumnHeader)(new winforms.ColumnHeader()));
+            this.cronOptions = new winforms.DataGridViewTextBoxColumn();
+            this.cronCommand = new winforms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataCronTab)).BeginInit();
             this.SuspendLayout();
             // 
             // dataCronTab
             // 
             this.dataCronTab.BackgroundColor = System.Drawing.Color.White;
-            this.dataCronTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataCronTab.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataCronTab.ColumnHeadersHeightSizeMode = winforms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataCronTab.Columns.AddRange(new winforms.DataGridViewColumn[] {
             this.cronOptions,
             this.cronCommand});
             this.dataCronTab.Location = new System.Drawing.Point(12, 66);
             this.dataCronTab.MultiSelect = false;
             this.dataCronTab.Name = "dataCronTab";
-            this.dataCronTab.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataCronTab.SelectionMode = winforms.DataGridViewSelectionMode.FullRowSelect;
             this.dataCronTab.Size = new System.Drawing.Size(653, 273);
             this.dataCronTab.TabIndex = 0;
             // 
@@ -116,8 +119,8 @@
             // listSchedule
             // 
             this.listSchedule.BackColor = System.Drawing.Color.White;
-            this.listSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listSchedule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listSchedule.BorderStyle = winforms.BorderStyle.FixedSingle;
+            this.listSchedule.Columns.AddRange(new winforms.ColumnHeader[] {
             this.colScheduledEvents});
             this.listSchedule.Location = new System.Drawing.Point(12, 372);
             this.listSchedule.MultiSelect = false;
@@ -125,7 +128,7 @@
             this.listSchedule.Size = new System.Drawing.Size(203, 176);
             this.listSchedule.TabIndex = 15;
             this.listSchedule.UseCompatibleStateImageBehavior = false;
-            this.listSchedule.View = System.Windows.Forms.View.Details;
+            this.listSchedule.View = winforms.View.Details;
             // 
             // colScheduledEvents
             // 
@@ -147,7 +150,7 @@
             // ViewCronTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = winforms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(679, 571);
             this.Controls.Add(this.listSchedule);
@@ -167,16 +170,16 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataCronTab;
-        private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button tabRefresh;
-        private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Label lblOptions;
-        private System.Windows.Forms.Label lblSaveStatus;
-        private System.Windows.Forms.ListView listSchedule;
-        private System.Windows.Forms.ColumnHeader colScheduledEvents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cronOptions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cronCommand;
+        private winforms.DataGridView dataCronTab;
+        private winforms.Button btnReload;
+        private winforms.Button btnSave;
+        private winforms.Button tabRefresh;
+        private winforms.Button btnTest;
+        private winforms.Label lblOptions;
+        private winforms.Label lblSaveStatus;
+        private winforms.ListView listSchedule;
+        private winforms.ColumnHeader colScheduledEvents;
+        private winforms.DataGridViewTextBoxColumn cronOptions;
+        private winforms.DataGridViewTextBoxColumn cronCommand;
     }
 }

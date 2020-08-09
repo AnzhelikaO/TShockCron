@@ -1,4 +1,7 @@
-﻿using System;
+﻿extern alias glwinforms;
+using winforms = glwinforms.System.Windows.Forms;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -185,7 +188,7 @@ namespace TShockCron
                 // this code is going to be executed in a separate thread
                 cronTabForm = new ViewCronTab(path);
 
-                Application.Run(cronTabForm);
+                winforms.Application.Run(cronTabForm);
 
             }));
             thread.SetApartmentState(ApartmentState.STA);

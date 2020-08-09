@@ -1,4 +1,7 @@
-﻿using System;
+﻿extern alias glwinforms;
+using winforms = glwinforms.System.Windows.Forms;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +15,7 @@ using System.IO;
 using NCrontab;
 namespace TShockCron
 {
-    public partial class ViewCronTab : Form
+    public partial class ViewCronTab : winforms.Form
     {
         private string cronTabPath;
         public ViewCronTab(string path)
@@ -110,7 +113,7 @@ namespace TShockCron
 
             using (System.IO.StreamWriter fileWriter = new System.IO.StreamWriter(cronTabPath))
             {
-                foreach (DataGridViewRow row in dataCronTab.Rows)
+                foreach (winforms.DataGridViewRow row in dataCronTab.Rows)
                 {
                     if (row != null)
                         if (row.Cells != null)
@@ -160,20 +163,20 @@ namespace TShockCron
                 occurrence = schedule.GetNextOccurrences(startDate, endDate);
                 lblOptions.Text = "Future Schedule Date/Times for " + intervalOptions;
 
-                ListViewItem scheduleItem;
+                winforms.ListViewItem scheduleItem;
                 int count = 0;
                 foreach (DateTime futureEvent in schedule.GetNextOccurrences(startDate, endDate))
                 {
                     if (count++ >= 10)
                         break;
-                    scheduleItem = new ListViewItem(futureEvent.ToString("g"));
+                    scheduleItem = new winforms.ListViewItem(futureEvent.ToString("g"));
                     listSchedule.Items.Add(scheduleItem);
                 }
             }
             catch (CrontabException ex)
             {
-                ListViewItem scheduleItem;
-                scheduleItem = new ListViewItem(ex.Message);
+                winforms.ListViewItem scheduleItem;
+                scheduleItem = new winforms.ListViewItem(ex.Message);
                 listSchedule.Items.Add(scheduleItem);
             }
 
